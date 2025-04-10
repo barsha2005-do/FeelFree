@@ -84,7 +84,7 @@ const HomePage: React.FC = () => {
           >
             <Box
               component="img"
-              src="/hero-image.png"
+              src={`${process.env.PUBLIC_URL}/hero-image.png`}
               alt="Supportive community"
               sx={{
                 width: '100%',
