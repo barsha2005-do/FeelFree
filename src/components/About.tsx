@@ -16,19 +16,19 @@ const teamMembers = [
     name: 'Dr. Sarah Johnson',
     role: 'Founder & Clinical Psychologist',
     bio: 'Passionate about making mental health support accessible to everyone.',
-    avatar: '👩‍⚕️'
+    avatar: '/images/team/sarah-johnson.jpg'
   },
   {
     name: 'Michael Chen',
     role: 'Tech Lead',
     bio: 'Building secure and user-friendly platforms for mental health support.',
-    avatar: '👨‍💻'
+    avatar: '/images/team/michael-chen.jpg'
   },
   {
     name: 'Emma Rodriguez',
     role: 'Community Manager',
     bio: 'Creating safe spaces and fostering supportive communities.',
-    avatar: '👩‍💼'
+    avatar: '/images/team/emma-rodriguez.jpg'
   }
 ];
 
@@ -42,7 +42,7 @@ const About: React.FC = () => {
         Our mission to make mental health support accessible to all
       </Typography>
       <Grid container spacing={4} sx={{ mt: 4 }}>
-        <Grid item component="div" xs={12} md={4}>
+        <Grid item xs={12} md={4} component="div">
           <Card sx={{ height: '100%' }}>
             <CardContent sx={{ textAlign: 'center' }}>
               <Psychology sx={{ fontSize: 60, color: 'primary.main', mb: 2 }} />
@@ -56,7 +56,7 @@ const About: React.FC = () => {
           </Card>
         </Grid>
 
-        <Grid item component="div" xs={12} md={4}>
+        <Grid item xs={12} md={4} component="div">
           <Card sx={{ height: '100%' }}>
             <CardContent sx={{ textAlign: 'center' }}>
               <Group sx={{ fontSize: 60, color: 'primary.main', mb: 2 }} />
@@ -70,7 +70,7 @@ const About: React.FC = () => {
           </Card>
         </Grid>
 
-        <Grid item component="div" xs={12} md={4}>
+        <Grid item xs={12} md={4} component="div">
           <Card sx={{ height: '100%' }}>
             <CardContent sx={{ textAlign: 'center' }}>
               <Favorite sx={{ fontSize: 60, color: 'primary.main', mb: 2 }} />
@@ -104,12 +104,13 @@ const About: React.FC = () => {
       </Typography>
       <Grid container spacing={4} sx={{ mt: 2 }}>
         {teamMembers.map((member, index) => (
-          <Grid item component="div" xs={12} md={4} key={index}>
+          <Grid item xs={12} md={4} key={index} component="div">
             <Card>
               <CardContent sx={{ textAlign: 'center' }}>
-                <Avatar sx={{ width: 100, height: 100, fontSize: '3rem', mx: 'auto', mb: 2 }}>
-                  {member.avatar}
-                </Avatar>
+                <Avatar 
+                  src={member.avatar}
+                  sx={{ width: 100, height: 100, mx: 'auto', mb: 2 }}
+                />
                 <Typography variant="h6" gutterBottom>
                   {member.name}
                 </Typography>
